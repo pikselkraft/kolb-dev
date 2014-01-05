@@ -26,7 +26,6 @@ A faire ->  double vérification php/js
 $monTabUsers = $_SESSION['user']; 
 testVar($monTabUsers);
 testVar($_SESSION['user']['date_naissance']);
-$_SESSION['questions'];
 
 $test=date("d/m/Y", $_SESSION['user']['date_naissance']);
 testVar($test);
@@ -35,7 +34,7 @@ testVar($test);
 Test de soumission de a question et incrémentation du numéro de la question
 ****************************************************************************/
 
-   $question_number = 1;
+    $question_number = 1;
     
     $questions = array(
         1 => array("différencier", "essayer", "s'impliquer", "être pratique"),
@@ -55,9 +54,8 @@ Test de soumission de a question et incrémentation du numéro de la question
         
         $_SESSION['questions'][$_POST['question_number']] = array($_POST['select-choix-1'],$_POST['select-choix-2'],$_POST['select-choix-3'],$_POST['select-choix-4']);
        
-            // testVar($_SESSION['questions'][$numero_question]);
-           // print_r($_SESSION['questions'][$numero_question]);
-           // print_r($_SESSION['questions']);
+            testVar($_SESSION['questions'][$_POST['question_number']]);
+            testVar($_SESSION['questions']);
       
         if($_POST['question_number'] == 9)
         {

@@ -13,9 +13,7 @@ resultat du questionnaire Kolb --> affichage du résultat du questionnaire
 /**************************************************************************** 
 ****************************************************************************
 
-A faire ->  insertion question
-            
-            travail perso
+A faire ->  travail perso
 
 ****************************************************************************
 ****************************************************************************/
@@ -102,7 +100,7 @@ while ($sql_iduser = $result_iduser ->fetch_assoc()) // récupération iduser de
     testVar($current_iduser);
 }
 $profil="convergent";
-$date=time();
+$date=time(); // stockage de la date/heure/minute/seconde de l'insertion dans la base de données
 $insert_resultat = "INSERT INTO resultats (oc,ec,ca,ea,profil,date,users_Idusers) VALUES ('".$oc."','".$ec."','".$ca."','".$ea."','".$profil."', '".$date."','".$current_iduser."')";
 
 testVar2 ($insert_resultat,"test","test");
