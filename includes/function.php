@@ -57,6 +57,13 @@ function calcul($nb1,$nb2)
     return $nb3;
 }
 
-calcul(4,5);
+function compareQuestion($val1,$val2,$val3,$val4)
+{
+    if ($val1===$val2 or $val1===$val3 or $val1===$val4 or $val2===$val3 or $val2===$val4 or $val3===$val4)
+    {
+        return true;
+    }
+    else {return false;}    
+}
     
 ?>

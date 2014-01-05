@@ -12,28 +12,22 @@ Questionnaire du questionnaire Kolb -> questionnaire kolb
 /**************************************************************************** 
 ****************************************************************************
 
-A faire ->  double vérification php/js
-            sélecteur question différents
-            
-            PB : perte session avec SELF
-            
-            
-            travail perso
+A faire ->   travail perso
 
 ****************************************************************************
 ****************************************************************************/
 
 $monTabUsers = $_SESSION['user']; 
-testVar($monTabUsers);
-testVar($_SESSION['user']['date_naissance']);
+//testVar($monTabUsers);
+//testVar($_SESSION['user']['date_naissance']);
 
 $test=date("d/m/Y", $_SESSION['user']['date_naissance']);
-testVar($test);
+//testVar($test);
 
 /**************************************************************************** 
 Test de soumission de a question et incrémentation du numéro de la question
 ****************************************************************************/
-
+    
     $question_number = 1;
     
     $questions = array(
@@ -45,30 +39,48 @@ Test de soumission de a question et incrémentation du numéro de la question
         6 => array("abstrait", "observateur", "concret", "actif"),
         7 => array("orienté vers le présent", "réflichissant", "orienté vers le futur", "pragmatique"),
         8 => array("partir de son expérience", "observer", "penser", "expérimenter"),
-        9  => array("intense", "réservé", "rationel", "responsable")
+        9 => array("intense", "réservé", "rationel", "responsable")
     ); 
-                        
+    
+//    if(compareQuestion($_POST['select-choix-1'],$_POST['select-choix-2'],$_POST['select-choix-3'],$_POST['select-choix-4']))
+//    {
+//        echo "test";
+//    }
+//    else 
+//    { 
+//        echo "vous devez sélectionner des valeurs différentes";
+//    }            
     
    if(isset($_POST['question_submit'])) // test de la soumission de la question en cours
    {
         
         $_SESSION['questions'][$_POST['question_number']] = array($_POST['select-choix-1'],$_POST['select-choix-2'],$_POST['select-choix-3'],$_POST['select-choix-4']);
        
-            testVar($_SESSION['questions'][$_POST['question_number']]);
-            testVar($_SESSION['questions']);
-      
-        if($_POST['question_number'] == 9)
+//      testVar($_SESSION['questions'][$_POST['question_number']]);
+//      testVar($_SESSION['questions']);
+        echo $_POST['select-choix-1'];
+        echo $_POST['select-choix-2'];
+        
+        if(compareQuestion($_POST['select-choix-1'],$_POST['select-choix-2'],$_POST['select-choix-3'],$_POST['select-choix-4']))
         {
-            header('Location:resultat.php');
-
+            $question_number = $_POST['question_number'];
+            echo "vous devez sélectionner des valeurs différentes";
         }
-        $question_number = $_POST['question_number'] + 1; // incrémentation de la question
-   }
-   else 
-   { 
-       echo "<p> Vous n'avez pas répondu à la question</p>";
-       // charger la page avec la question courante
-   }
+        else
+        {
+            echo "test";
+            if($_POST['question_number'] == 9)
+            {
+                header('Location:resultat.php');
+            }
+            $question_number = $_POST['question_number'] + 1; // incrémentation de la question
+        }
+    }
+    else 
+    { 
+        echo "<p> Vous n'avez pas répondu à la question</p>";
+    }
+
 ?>
 
 <?php require_once('includes/header.php'); ?>

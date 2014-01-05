@@ -45,18 +45,22 @@ echo "<br />";
 if($x >= 3 && $x <= 17 && $y <= 2 && $y >= -12)
 {
     echo "Accomodateur";
+    $profil="accomodateur";
 }
 else if($x <= 2 && $x >= -15 && $y <= 2 && $y >= -12)
 {
     echo "Divergent";
+    $profil="divergent";
     
 } else if($x >= 3 && $x <= 17 && $y >= 3 && $y <= 18)
 {
     echo "Convergent";
+    $profil="convergent";
 }
 else if($x <= 2 && $x >= -15 && $y >= 3 && $y <= 18)
 {
     echo "Assimilateur";
+    $profil="assimilateur";
 }
 else {echo"vous êtes bizarre";}
 
@@ -85,7 +89,7 @@ Insertion résultat
 ****************************************************************************/
 
 // idusers en fonction name session et date
-testVar($date_naissance);
+//testVar($date_naissance);
 
 $select_iduser =    "SELECT idusers FROM users 
                     WHERE nom='".$name."' 
@@ -97,13 +101,13 @@ $result_iduser = $mysqli->query($select_iduser);
 while ($sql_iduser = $result_iduser ->fetch_assoc()) // récupération iduser de l'utilisateur
 {
     $current_iduser=$sql_iduser['idusers'];
-    testVar($current_iduser);
+    //testVar($current_iduser);
 }
-$profil="convergent";
+
 $date=time(); // stockage de la date/heure/minute/seconde de l'insertion dans la base de données
 $insert_resultat = "INSERT INTO resultats (oc,ec,ca,ea,profil,date,users_Idusers) VALUES ('".$oc."','".$ec."','".$ca."','".$ea."','".$profil."', '".$date."','".$current_iduser."')";
 
-testVar2 ($insert_resultat,"test","test");
+//testVar2 ($insert_resultat,"test","test");
 
 $mysqli->query($insert_resultat); // INSERTION utilisateur
 
@@ -117,8 +121,8 @@ else {echo "échec d'insertion";}
 /**************************************************************************** 
 Insertion questions
 ****************************************************************************/
-
-
+$insert_questions = "INSERT INTO questions (q1,q2,q3,q4,q5,q6,q7,q8,q9,users_Idusers) VALUES ('".implode("",$_SESSION['questions']['1'])."','".implode("",$_SESSION['questions']['2'])."','".implode("",$_SESSION['questions']['3'])."','".implode("",$_SESSION['questions']['4'])."','".implode("",$_SESSION['questions']['5'])."', '".implode("",$_SESSION['questions']['6'])."','".implode("",$_SESSION['questions']['7'])."','".implode("",$_SESSION['questions']['8'])."','".implode("",$_SESSION['questions']['9'])."','".$current_iduser."')";
+echo $insert_questions;
 ?>
 
 <?php require_once('includes/header.php'); ?>
