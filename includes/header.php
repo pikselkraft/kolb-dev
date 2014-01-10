@@ -5,7 +5,13 @@
             <title>Kolb accueil</title>
             
             <link rel="stylesheet" href="css/foundation.css" />
+            
             <script src="js/modernizr.js"></script>
+<!--
+            <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+            <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+            
+-->
     </head>
     <body>
          

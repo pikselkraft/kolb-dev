@@ -23,6 +23,7 @@ function menu()
     echo '<li><a href="resultat.php">resultat</a></li>';
     echo "</nav>";
 }
+
 function testVar2 ($var,$text,$titre) // fonction de debug 
 {
 	echo "<div id=\"test\" style=\"border:3px solid red;width:50%;\">";
