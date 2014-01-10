@@ -23,7 +23,7 @@ function menu()
     echo '<li><a href="resultat.php">resultat</a></li>';
     echo "</nav>";
 }
-function testVar2 ($var,$text,$titre) // fonction de debug +
+function testVar2 ($var,$text,$titre) // fonction de debug 
 {
 	echo "<div id=\"test\" style=\"border:3px solid red;width:50%;\">";
 	echo "<h6 style=\"color:blue;\"> DEBUT TEST " . $titre . " </h6>";
@@ -57,7 +57,7 @@ function calcul($nb1,$nb2)
     return $nb3;
 }
 
-function compareQuestion($val1,$val2,$val3,$val4)
+function compareEquality($val1,$val2,$val3,$val4)
 {
     if ($val1===$val2 or $val1===$val3 or $val1===$val4 or $val2===$val3 or $val2===$val4 or $val3===$val4)
     {
@@ -65,5 +65,13 @@ function compareQuestion($val1,$val2,$val3,$val4)
     }
     else {return false;}    
 }
-    
+
+function compareValues($val1,$val2,$val3,$val4)
+{
+    $test1 = max($val1,$val2);
+    $test2 = max($test1,$val3); 
+    $testMax = max($test2,$val3);
+    return $testMax;
+}
+
 ?>

@@ -1,5 +1,3 @@
-
-
 <?php
 $questions = array(
 	1 => array("différencier", "essayer", "s'impliquer", "être pratique"),
@@ -12,15 +10,16 @@ $questions = array(
 	8 => array("partir de son expérience", "observer", "penser", "expérimenter"),
 	9 => array("intense", "réservé", "rationel", "responsable")
 ); 
-//print_r($questions);
+
+//print_r($questions); // debug et tests
+//echo $questions[1][3];
+//echo "------------";
+//
+//foreach($questions[1] as $element)
+//{
+//    echo $element;
+//    echo " ";
+//}
 
 
-echo $questions[1][3];
-echo "------------";
-
-foreach($questions[1] as $element)
-{
-    echo $element;
-    echo " ";
-}
 ?>

@@ -8,6 +8,15 @@
             <script src="js/modernizr.js"></script>
     </head>
     <body>
+         
+        <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+                <li class="name">
+                  <h1><a href="#">Test Kolb</a></h1>
+                </li>
+            </ul>
+        </nav>
+         
          <ul>
             <li><a href="index.php">index</a></li> 
             <li><a href="inscription.php">inscription</a></li> 
