@@ -2,20 +2,15 @@
 session_start();
 require('includes/function.php');
 /**************************
-Index.php
-Questionnaire du questionnaire Kolb -> questionnaire kolb
-
-
-20/12/13
+/* Questionnaire.php
+/* Questionnaire KOlb
+/* 20/12/13
 *************************/
-
-/**************************************************************************** 
-****************************************************************************
-
-A faire ->   travail perso
-
-****************************************************************************
-****************************************************************************/
+/**************************
+Plan :
+-> Gestion numéro des questions
+-> Page html questions
+*************************/
 
 $monTabUsers = $_SESSION['user']; 
 //testVar($monTabUsers);

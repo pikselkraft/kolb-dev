@@ -7,11 +7,14 @@
             <link rel="stylesheet" href="css/foundation.css" />
             
             <script src="js/modernizr.js"></script>
-<!--
+
             <script src="//code.jquery.com/jquery-1.9.1.js"></script>
             <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
             
--->
+            <style type="text/css">
+                .label {width:100px;text-align:right;float:left;padding-right:10px;font-weight:bold;}
+                #register-form label.error, .output {color:#FB3A3A;font-weight:bold;}
+            </style>
     </head>
     <body>
          
@@ -29,3 +32,5 @@
             <li><a href="questionaire.php">questionaire</a></li> 
             <li><a href="resultat.php">resultat</a></li>
         </ul>
+        
+       

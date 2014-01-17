@@ -3,11 +3,9 @@ session_start();
 $_session['user']="";
 require_once('includes/function.php');
 /**************************
-Index.php
-
-Inscription du questionnaire Kolb -> input information utilisateur
-
-20/12/13
+/* Index.php
+/* Inscription du questionnaire Kolb -> input information utilisateur
+/* 20/12/13
 *************************/
 
 /**************************
@@ -44,7 +42,7 @@ if(isset($_POST["user_nom"]))
    
     </div>
                          
-    <form name="email-form" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" id="register-form" novalidate="novalidate">
+    <form name="email_form" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" id="email_form" novalidate="novalidate">
         
         <div class="row">
             <div class="large-6 columns">
@@ -89,31 +87,22 @@ if(isset($_POST["user_nom"]))
          
     </form>
 
-
-    <!-- Define some CSS -->
-  <style type="text/css">
-    .label {width:100px;text-align:right;float:left;padding-right:10px;font-weight:bold;}
-    #register-form label.error, .output {color:#FB3A3A;font-weight:bold;}
-  </style>
-  
-  <!-- Load jQuery and the validate plugin -->
-  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-  
-  <!-- jQuery Form Validation code -->
-  <script>
-  
-  /*
-  A utiliser seulement pour ie9 et inférieur
-  
-  */
-  
-  
-  // When the browser is ready...
-  $(function() {
+<?php
+$ua=getBrowser();
+$yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'] . " reports: <br >" . $ua['userAgent'];  
+echo $ua['name'];
+if($ua['name']=="Internet Explorer" or $ua['name']=="Apple Safari") // test navigateur safari et IE
+{
+    //echo "test if"; 
+    if(intval($ua['version'])<10) // utilisation de jquery pour les versions de IE inférieur à 10 et safari 
+    {
+    //echo "test if2"
+    ?>
+    <script>
+      $(function() {
   
     // Setup form validation on the #register-form element
-    $("#register-form").validate({
+    $("#email_form").validate({
     
         // Specify the validation rules
         rules: {
@@ -124,17 +113,29 @@ if(isset($_POST["user_nom"]))
         
         // Specify the validation error messages
         messages: {
-            user_prenom: "Please enter your name",
-            user_date_naissance: "Please enter your address",
-            username: "Please enter a valid username",
+            user_prenom: "Saississez votre prenom",
+            user_date_naissance: "Saississez votre date de naissance",
+            username: "Saississez votre nom",
         },
-        
         submitHandler: function(form) {
             form.submit();
         }
     });
-
   });
   </script>
+  <?php
+  }
+}
+else { 
+
+  //echo "test else"; ?> 
+  <script>
+  $(document).ready(function() {
+        $('#email_form').removeAttr('novalidate');
+    });
+  </script>
+  <?php
+}
+?>
     
 <?php require_once('includes/footer.php'); ?>

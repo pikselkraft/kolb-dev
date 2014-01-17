@@ -4,10 +4,14 @@ require_once('includes/function.php');
 require_once('includes/connexion.php');
 
 /**************************
-resultat.php
-resultat du questionnaire Kolb --> affichage du résultat du questionnaire
-
-20/12/13
+/* resultat.php
+/* page de résultat du questionnaire KOlb
+/* 20/12/13
+*************************/
+/**************************
+Plan :
+-> Stockage des questions et calcul du profil
+-> Page html résultat
 *************************/
 
 
