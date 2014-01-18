@@ -37,8 +37,14 @@ if(isset($_POST["user_nom"]))
         </div>
 
         <div class="small-10 small-centered large-uncentered columns">
-            <p>Description Test Kolb, ut sed pulvinar tellus. Pellentesque mollis lacinia lacinia. Donec ut turpis hendrerit, congue lectus ut, consequat elit. Vestibulum venenatis malesuada ornare. Nunc eget metus pellentesque, rhoncus libero et, ultricies tortor.</p>
+            <p>Le test Kolb permet de déterminer votre profil d'apprentissage</p>
         </div>
+        
+<!--
+        <div class="small-10 small-centered large-uncentered columns">
+                <h3>Bienvenu  {{yourFirstName}}  {{yourName}}</h3>
+            </div>
+-->
    
     </div>
                          
@@ -47,12 +53,12 @@ if(isset($_POST["user_nom"]))
         <div class="row">
             <div class="large-6 columns">
                 <label class="label" for="user_nom">Nom:</label>
-                <input class="w-input input" id="input-nom" type="text" placeholder="Entrez votre nom" name="user_nom" required="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" autofocus="autofocus">
+                <input class="w-input input" id="input-nom" type="text" ng-model="yourName" placeholder="Entrez votre nom" name="user_nom" required="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" autofocus="autofocus">
             </div>
             
             <div class="large-6 columns">
                 <label class="label" for="user_prenom">Prénom</label>
-                <input class="w-input input" id="input-prenom" type="text" placeholder="Entrez votre prénom" name="user_prenom" required="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$">
+                <input class="w-input input" id="input-prenom" type="text" ng-model="yourFirstName" placeholder="Entrez votre prénom" name="user_prenom" required="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$">
              </div>
         </div> 
         
@@ -80,7 +86,7 @@ if(isset($_POST["user_nom"]))
          </div>
          
          <div class="row">
-            <div class="large-12 columns">
+            <div class="large-6 columns">
                 <input type="submit" value="Questionaire" class="button">
             </div>
          </div>
@@ -90,7 +96,7 @@ if(isset($_POST["user_nom"]))
 <?php
 $ua=getBrowser();
 $yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'] . " reports: <br >" . $ua['userAgent'];  
-echo $ua['name'];
+//echo $ua['name'];
 if($ua['name']=="Internet Explorer" or $ua['name']=="Apple Safari") // test navigateur safari et IE
 {
     //echo "test if"; 

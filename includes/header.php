@@ -1,4 +1,5 @@
 <!doctype html>
+<html ng-app>
     <head>
             <meta charset="UTF-8">
 
@@ -10,9 +11,10 @@
 
             <script src="//code.jquery.com/jquery-1.9.1.js"></script>
             <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+<!--            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>-->
             
             <style type="text/css">
-                .label {width:100px;text-align:right;float:left;padding-right:10px;font-weight:bold;}
+                .label {width:150px;text-align:right;float:left;padding-right:10px;font-weight:bold;}
                 #register-form label.error, .output {color:#FB3A3A;font-weight:bold;}
             </style>
     </head>
