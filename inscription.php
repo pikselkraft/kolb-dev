@@ -17,11 +17,11 @@ Plan :
 if(isset($_POST["user_nom"]))
 {    
     list($jour, $mois, $annee) = explode('/',$_POST['user_date_naissance']);
-
-    $_SESSION['user']['name'] = secInput($_POST["user_nom"]);
-    $_SESSION['user']['prenom'] = secInput($_POST['user_prenom']);
+    
+    $_SESSION['user']['name']           = secInput($_POST["user_nom"]);
+    $_SESSION['user']['prenom']         = secInput($_POST['user_prenom']);
     $_SESSION['user']['date_naissance'] = mktime(0, 0, 0, $mois, $jour, $annee);
-    $_SESSION['user']['formation'] = secInput($_POST['user_formation']);
+    $_SESSION['user']['formation']      = secInput($_POST['user_formation']);
    
     header("Location:questionaire.php");
 }
@@ -33,18 +33,12 @@ if(isset($_POST["user_nom"]))
     <div class="row">
         
         <div class="small-10 small-centered large-uncentered columns">
-             <h2>Évaluation Kolb</h2>
+             <h2>&Eacute;valuation Kolb</h2>
         </div>
 
         <div class="small-10 small-centered large-uncentered columns">
-            <p>Le test Kolb permet de déterminer votre profil d'apprentissage</p>
+            <p>Les donn&eacute;es sont recueillis uniquement pour nos statistiques.</p>
         </div>
-        
-<!--
-        <div class="small-10 small-centered large-uncentered columns">
-                <h3>Bienvenu  {{yourFirstName}}  {{yourName}}</h3>
-            </div>
--->
    
     </div>
                          
@@ -57,7 +51,7 @@ if(isset($_POST["user_nom"]))
             </div>
             
             <div class="large-6 columns">
-                <label class="label" for="user_prenom">Prénom</label>
+                <label class="label" for="user_prenom">Pr&eacute;nom</label>
                 <input class="w-input input" id="input-prenom" type="text" ng-model="yourFirstName" placeholder="Entrez votre prénom" name="user_prenom" required="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$">
              </div>
         </div> 
@@ -79,7 +73,7 @@ if(isset($_POST["user_nom"]))
                   <option value="3">bac +3</option>
                   <option value="4">bac +4</option>
                   <option value="5">bac +5</option>
-                  <option value="6">Supérieur</option>
+                  <option value="6">Sup&eacute;rieur</option>
                   <option value="7">Autres</option>
                 </select>
             </div>
@@ -94,9 +88,8 @@ if(isset($_POST["user_nom"]))
     </form>
 
 <?php
-$ua=getBrowser();
-$yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'] . " reports: <br >" . $ua['userAgent'];  
-//echo $ua['name'];
+$ua          =getBrowser();
+$yourbrowser = "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'] . " reports: <br >" . $ua['userAgent'];  
 if($ua['name']=="Internet Explorer" or $ua['name']=="Apple Safari") // test navigateur safari et IE
 {
     //echo "test if"; 
@@ -133,8 +126,7 @@ if($ua['name']=="Internet Explorer" or $ua['name']=="Apple Safari") // test navi
   }
 }
 else { 
-
-  //echo "test else"; ?> 
+?> 
   <script>
   $(document).ready(function() {
         $('#email_form').removeAttr('novalidate');

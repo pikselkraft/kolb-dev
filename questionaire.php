@@ -13,8 +13,6 @@ Plan :
 *************************/
 
 $monTabUsers = $_SESSION['user']; 
-//testVar($monTabUsers);
-//testVar($_SESSION['user']['date_naissance']);
 
 /**************************************************************************** 
 Test de soumission de a question et incrémentation du numéro de la question
@@ -23,28 +21,25 @@ Test de soumission de a question et incrémentation du numéro de la question
     $question_number = 1;
     
     $questions = array(
-        1 => array("différencier", "essayer", "s'impliquer", "être pratique"),
-        2 => array("réceptif", "logique", "méthodique", "impartial"),
+        1 => array("diff&eacute;rencier", "essayer", "s'impliquer", "&ecirc;tre pratique"),
+        2 => array("r&eacute;ceptif", "logique", "m&eacute;thodique", "impartial"),
         3 => array("ressentir", "faire attention", "réfléchir", "faire"),
-        4 => array("accepter", "prendre des risques", "évaluer", "prendre conscience"),
+        4 => array("accepter", "prendre des risques", "&eacute;valuer", "prendre conscience"),
         5 => array("intuitif", "productif", "logique", "interrogateur"),
         6 => array("abstrait", "observateur", "concret", "actif"),
-        7 => array("orienté vers le présent", "réflichissant", "orienté vers le futur", "pragmatique"),
-        8 => array("partir de son expérience", "observer", "penser", "expérimenter"),
-        9 => array("intense", "réservé", "rationel", "responsable")
+        7 => array("orient&eacute; vers le pr&eacute;sent", "r&eacute;flichissant", "orienté vers le futur", "pragmatique"),
+        8 => array("partir de son exp&eacute;rience", "observer", "penser", "expérimenter"),
+        9 => array("intense", "r&eacute;serv&eacute;", "rationel", "responsable")
     ); 
     
    if(isset($_POST['question_submit'])) // test de la soumission de la question en cours
    { 
         $_SESSION['questions'][$_POST['question_number']] = array($_POST['select-choix-1'],$_POST['select-choix-2'],$_POST['select-choix-3'],$_POST['select-choix-4']);
-       
-//      testVar($_SESSION['questions'][$_POST['question_number']]);
-//      testVar($_SESSION['questions']);
         
         if(compareEquality($_POST['select-choix-1'],$_POST['select-choix-2'],$_POST['select-choix-3'],$_POST['select-choix-4']))
         {
             $question_number = $_POST['question_number'];
-            echo "vous devez sélectionner des valeurs différentes";
+            echo "Vous devez s&eacute;lectionner des valeurs diff&eacute;rentes";
         }
         else
         {
@@ -57,7 +52,7 @@ Test de soumission de a question et incrémentation du numéro de la question
     }
     else 
     { 
-        echo "<p> Vous n'avez pas répondu à la question</p>";
+        echo "<p> Vous n'avez pas r&eacute;pondu à la question</p>";
     }
 
 ?>
@@ -67,18 +62,18 @@ Test de soumission de a question et incrémentation du numéro de la question
     <div class="row">
         
         <div class="small-10 small-centered large-uncentered columns">
-             <h2>Évaluation Kolb</h2>
+             <h2>&Eacute;valuation Kolb</h2>
         </div>
 
         <div class="small-10 small-centered large-uncentered columns">
-           <p>Il vous reste encore <?php echo (10 - $question_number); ?> question<?php if($question_number === 9) { echo''; } else { echo 's'; } ?> à remplir, avant de connaitre votre profil d'apprenant</p>
+           <p>Il vous reste encore <?= (10 - $question_number); ?> question<?php if($question_number === 9) { echo''; } else { echo 's'; } ?> à remplir, avant de connaitre votre profil d'apprenant</p>
         </div>
    
     </div>
                 
     <form name="email-form" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>?etat=2">
             
-            <input type="hidden" name="question_number" value="<?php echo $question_number;?>" />
+            <input type="hidden" name="question_number" value="<?= $question_number;?>" />
         
         <div class="row">
             <div class="small-10 small-centered large-uncentered columns">

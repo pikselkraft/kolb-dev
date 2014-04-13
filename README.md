@@ -1,6 +1,9 @@
 Project Kolb
 ===
 
-Using foundation and github
+**The kolb test is a questionnaire to determine your method of learning**
 
-With Angular Js function
+* Procedural php
+* Foundation
+* ChartJs
+* Jquery
