@@ -200,18 +200,18 @@ $mysqli->query($insert_questions); // insertion des questions -> stocke une suit
                 <p>Description de votre dominante: <?= $profilDominant ;?></p>
             </div>
         </div>
-                        
-  <!-- <div class="small-10 small-centered large-uncentered columns">  
-               <ul>Vos résultats :
-                     <li>Vote score en EC (exp&eacute;rience concr&egrave;te): <?= $ec; ?> </li>
-                     <li>Vote score en CA (conceptualisation abstraite): <?= $oc; ?> </li>
-                     <li>Vote score en EA (exp&eacute;rimentation active): <?= $ca; ?> </li>
-                     <li>Vote score en OR (observation r&eacute;fl&eacute;chie): <?= $ea; ?> </li>
-                </ul>
-        </div> -->
-        
-    
+
+         <a class="button" href="#" data-reveal-id="myModal">Regular Modal Example</a>
+         <div class="reveal-modal" id="myModal" data-reveal="">
+         <h2>This is a Pop Up</h2>
+         There are many like it but this one is mine. Click the "x" in the upper right hand corner to close or you can click anywhere outside of the window to close
+         <a class="close-reveal-modal">×</a></div>
+ 
+<!--/.reveal-modal -->
+
     <script type="text/javascript">
+
+         $(document).foundation();
 
       var data = {
         labels : ["EC : <?= $ec; ?>","CA : <?= $oc; ?>","EA : <?= $ca; ?>","OR : <?= $ea; ?>"],
