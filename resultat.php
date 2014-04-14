@@ -14,29 +14,20 @@ Plan :
 -> Page html résultat
 *************************/
 
-
 $monTabQuestion = $_SESSION['questions'];
-$monTabUsers = $_SESSION['user'];
+$monTabUsers    = $_SESSION['user'];
 
 
-$ec= $_SESSION['questions']['2']['0'] + $_SESSION['questions']['3']['0'] + $_SESSION['questions']['4']['0'] + $_SESSION['questions']['5']['0'] + $_SESSION['questions']['6']['0'] + $_SESSION['questions']['7']['0'];
+$ec = $_SESSION['questions']['2']['0'] + $_SESSION['questions']['3']['0'] + $_SESSION['questions']['4']['0'] + $_SESSION['questions']['5']['0'] + $_SESSION['questions']['6']['0'] + $_SESSION['questions']['7']['0'];
 
-$oc= $_SESSION['questions']['1']['1'] + $_SESSION['questions']['3']['1'] + $_SESSION['questions']['6']['1'] + $_SESSION['questions']['7']['1'] + $_SESSION['questions']['8']['1'] + $_SESSION['questions']['9']['1'];
+$oc = $_SESSION['questions']['1']['1'] + $_SESSION['questions']['3']['1'] + $_SESSION['questions']['6']['1'] + $_SESSION['questions']['7']['1'] + $_SESSION['questions']['8']['1'] + $_SESSION['questions']['9']['1'];
 
-$ca= $_SESSION['questions']['2']['2'] + $_SESSION['questions']['3']['2'] + $_SESSION['questions']['4']['2'] + $_SESSION['questions']['5']['2'] + $_SESSION['questions']['8']['2'] + $_SESSION['questions']['9']['2'];
+$ca = $_SESSION['questions']['2']['2'] + $_SESSION['questions']['3']['2'] + $_SESSION['questions']['4']['2'] + $_SESSION['questions']['5']['2'] + $_SESSION['questions']['8']['2'] + $_SESSION['questions']['9']['2'];
 
-$ea= $_SESSION['questions']['1']['3'] + $_SESSION['questions']['3']['3'] + $_SESSION['questions']['6']['3'] + $_SESSION['questions']['7']['3'] + $_SESSION['questions']['8']['3'] + $_SESSION['questions']['9']['3'];
+$ea = $_SESSION['questions']['1']['3'] + $_SESSION['questions']['3']['3'] + $_SESSION['questions']['6']['3'] + $_SESSION['questions']['7']['3'] + $_SESSION['questions']['8']['3'] + $_SESSION['questions']['9']['3'];
 
-//echo "<br /> EC :". $ec; // debug
-//echo "<br /> OR :". $oc;
-//echo "<br /> CA :". $ca;
-//echo "<br /> EA :". $ea;
-
-$y = $ca - $ec; 
-$x = $ea - $oc; 
-
-//echo "<br /> ca_ec y : " . $y; // debug
-//echo "<br /> ea_or x : " . $x;
+$y  = $ca - $ec; 
+$x  = $ea - $oc; 
 
 echo "<br />"; 
 if($x >= 3 && $x <= 17 && $y <= 2 && $y >= -12)
@@ -62,10 +53,10 @@ else {echo"L'application rencontre un problème technique, veuillez nous excuser
 Affichage dynamique profil dominant
 ****************************************************************************/
 $profilDescription = array(
-    'ec' => array("Cela correspond à une approche de l’apprentissage basée sur la réceptivité et l’expérience, ce qui dépend essentiellement de jugements inspirés par le sentiment. Des sujets à score élevé en EC ont tendance à être empathiques et orientés vers les autres. Ils trouvent en général que les apports théoriques sont sans utilité et préfèrent traiter chaque situation comme un cas unique. Ils apprennent mieux à partir d’exemples particuliers dans lesquels ils peuvent être engagés. Dans leur approche de l’apprentissage, des sujets qui privilégient l’expérience concrète s’orientent davantage vers leurs pairs que vers les autorités et ils tirent davantage de l’échange et de la discussion avec les sujets qui sont eux aussi à dominante EC."),
-    'or' => array("Cela correspond à une approche analytique et conceptuelle de l’apprentissage qui est en rapport avec la pensée logique et l’évaluation rationnelle. Des sujets à score élevé en CA s’intéressent aux objets et aux symboles plus qu’aux personnes. Ils apprennent mieux dans des situations d’apprentissage structurés de manière autoritaire et impersonnelle qui mettent l’accent sur la théorie et l’analyse systématique. Ils sont frustrés par des démarches non structurées d’apprentissage par découverte, comme des exercices et des simulations et ils en tirent peu de bénéfice."),
-    'ca' => array("Cela indique une orientation vers un apprentissage par l’action, basé sur l’expérimentation. Des sujets au score élevé en EA apprennent mieux lorsqu’ils peuvents s’engager dans des projets, du travail à la maison ou des discussions en petits groupes. Ils n’aiment pas les situations d’apprentissage passives comme les cours. Ces sujets ont tendance à être extravertis."),
-    'ea' => array("Cela indique une approche de l’apprentissage basée sur l’expérimentation, conduite de manière impartiale et réfléchie. Des sujets au score élevé en OR se basent beaucoup sur une observation minutieuse pour formuler un jugement et préfèrent des situations d’apprentissage comme des exposés qui leur permettent d’adopter le rôle d’observateur impartial et objectif. Ces sujets ont tendance à être introvertis.")); 
+    'ec' => array("Cela correspond &agrave; une approche de l’apprentissage bas&eacute;e sur la r&eacute;ceptivit&eacute; et l’exp&eacute;rience, ce qui d&eacute;pend essentiellement de jugements inspir&eacute;s par le sentiment. Des sujets &agrave; score &eacute;lev&eacute; en EC ont tendance &agrave; &ecirc;tre empathiques et orientés vers les autres. Ils trouvent en général que les apports théoriques sont sans utilit&eacute; et pr&eacute;f&egrave;rent traiter chaque situation comme un cas unique. Ils apprennent mieux &agrave; partir d’exemples particuliers dans lesquels ils peuvent &ecirc;tre engag&eacute;s. Dans leur approche de l’apprentissage, des sujets qui privil&eacute;gient l’exp&eacute;rience concr&egrave;te s’orientent davantage vers leurs pairs que vers les autorit&eacute;s et ils tirent davantage de l’&eacute;change et de la discussion avec les sujets qui sont eux aussi &agrave; dominante EC."),
+    'or' => array("Cela correspond &agrave; une approche analytique et conceptuelle de l’apprentissage qui est en rapport avec la pens&eacute;e logique et l’&eacute;valuation rationnelle. Des sujets à score élevé en CA s’int&eacute;ressent aux objets et aux symboles plus qu’aux personnes. Ils apprennent mieux dans des situations d’apprentissage structur&eacute;s de manière autoritaire et impersonnelle qui mettent l’accent sur la th&eacute;orie et l’analyse syst&eacute;matique. Ils sont frustr&eacute;s par des d&eacute;marches non structurées d’apprentissage par d&eacute;couverte, comme des exercices et des simulations et ils en tirent peu de b&eacute;n&eacute;fice."),
+    'ca' => array("Cela indique une orientation vers un apprentissage par l’action, bas&eacute; sur l’exp&eacute;rimentation. Des sujets au score élevé en EA apprennent mieux lorsqu’ils peuvents s’engager dans des projets, du travail &agrave; la maison ou des discussions en petits groupes. Ils n’aiment pas les situations d’apprentissage passives comme les cours. Ces sujets ont tendance à être extravertis."),
+    'ea' => array("Cela indique une approche de l’apprentissage basée sur l’exp&eacute;rimentation, conduite de mani&egrave;re impartiale et r&eacute;fl&eacute;chie. Des sujets au score &eacute;lev&eacute; en OR se basent beaucoup sur une observation minutieuse pour formuler un jugement et préfèrent des situations d’apprentissage comme des expos&eacute;s qui leur permettent d’adopter le r&ocirc;le d’observateur impartial et objectif. Ces sujets ont tendance &agrave; &ecirc;tre introvertis.")); 
 
  if(compareEquality($ec,$oc,$ca,$ea))
  {
@@ -121,23 +112,22 @@ $profilDescription = array(
 Affichage dynamique profil d'apprentissage
 ****************************************************************************/                  
  $profilApprentissage = array(
-     'Accomodateur' => array("L'accomodateur a des orientations opposées à celles de l'assimilateur. Il réussit mieux dans les domaines de l'expérience concrète (ec) et l'expérimentation active (ea). Il est surtout capable de réaliser des choses - en mettant en pratique des plans et des expériences - et de s'engager dans de nouvelles expériences. Il a tendance à prendre davantage de risques que les sujets caractéristiques des trois autres catégories. On a retenu le terme accommodateur car un tel sujet réussit particulièrement bien dans des situations ou il s'agit de s'adapter à des circonstances pécifiques. Dans des situations dans lesquelles une théorie ne correspond pas aux faits, cette personne remet le plan ou la théorie en question. Elle a tendance à résoudre les problèmes d'une manière intuitive par essai et erreur, s'appuyant plus sur l'information des autres que sur leur aptitude à l'analyse. Elle est à l'aise avec les autres,mais est souvent perçue comme impatiente et brusque. Sa formation se situe souvent dans le domaine technique ou pratique comme les affaires. On retrouve des personnes ayant ce mode d'apprentissage dans des métiers orientés vers l'action, comme les métiers du commerce."),
-    'Divergent' => array("Le divergent a des possibilités d'apprentissage opposées à celles du convergent. Un tel sujet est le plus à l'aise dans une situation d'expérience concrète (ec) et d'observation réfléchie (or). Sa force réside dans l'imagination. Il parvient très bien à percevoir des situations concrètes en adoptant des perspectives variées.  Nous avons appelé ce style divergent car une personne ayant ce mode d'apprentissage réussit  mieux dans des situations qui supposent la création d'idées comme  par exemple des sessions de brainstorming. La recherche montre que les divergents s'intéressent à autrui et font preuve d'imagination et  d'émotion. Ils ont des intérêts culturels étendus et tendent à se spécialiser dans le domaine  artistique. Les conseillers, les spécialistes du développement, les chefs du personnel  sont souvent caractérisés par ce mode d'apprentissage."),
-    'Convergent' => array("Les aptitudes d'apprentissage dominantes du convergent sont la conceptualisation abstraite (ca) et l'expérimentation active (ea). La force la plus importante de ce type de sujet réside dans l'application pratique des idées. Une personne ayant ce type semble le mieux réussir dans des situations analogues aux tests d'intelligence, où il n'y a qu'une réponse correcte ou solution à une question ou un problème. La connaissance de cette personne est organisée de telle sorte qu'elle peut se centrer sur des problèmes spécifiques en utilisant une pensée hypothéticodéductive. La recherche concernant ce mode d'apprentissage montre que les convergents sont relativement peu émotifs, préférant s'occuper de choses plutôt que de personnes. Ils ont des intérêts techniques étroits et cherchent à se spécialiser en science physiques. Ce mode d'apprentissage est caractéristique de bon nombres d'ingénieurs."),
-    'Assimilateur' => array("L'assimilateur a des aptitudes d'apprentissage dans le domaine de la conceptualisation abstraite (ca) et de l'observation réfléchie (or). Une telle personne a surtout des possibilités dans le domaine de la création des modèles théoriques. Elle réussit particulièrement bien dans le domaine du raisonnement inductif et dans l'organisation d'observations disparates en une explication cohérente. Elle est, comme le convergent, moins intéressée par les autres que par les concepts abstraits ; mais elle se sent moins concernée par l'emploi pratique des théories. Pour un tel sujet, il est plus important que la théorie soit satisfaisante d'un point de vue logique ; dans une situation dans laquelle une théorie ne s'accommoderait pas aux faits, l'assimilateur aurait plutôt tendance à négliger ou à réexaminer les faits. Ce mode d'apprentissage est plutôt caractéristique des sciences de base et des mathématiques que des sciences appliquées. On trouve ce mode d'apprentissage chez les praticiens de la recherche ou de la planification."));
+     'Accomodateur' => array("L'accomodateur a des orientations oppos&eacute;es &agrave; celles de l'assimilateur. Il r&eacute;ussit mieux dans les domaines de l'exp&eacute;rience concr&egrave;te (ec) et l'exp&eacute;rimentation active (ea). Il est surtout capable de r&eacute;aliser des choses - en mettant en pratique des plans et des exp&eacute;riences - et de s'engager dans de nouvelles exp&eacute;riences. Il a tendance &agrave; prendre davantage de risques que les sujets caract&eacute;ristiques des trois autres cat&eacute;gories. On a retenu le terme accommodateur car un tel sujet r&eacute;ussit particuli&egrave;rement bien dans des situations ou il s'agit de s'adapter &agrave; des circonstances p&eacute;cifiques. Dans des situations dans lesquelles une th&eacute;orie ne correspond pas aux faits, cette personne remet le plan ou la th&eacute;orie en question. Elle a tendance &agrave; r&eacute;soudre les probl&egrave;mes d'une mani&egrave;re intuitive par essai et erreur, s'appuyant plus sur l'information des autres que sur leur aptitude &agrave; l'analyse. Elle est &agrave; l'aise avec les autres,mais est souvent per&ccedil;ue comme impatiente et brusque. Sa formation se situe souvent dans le domaine technique ou pratique comme les affaires. On retrouve des personnes ayant ce mode d'apprentissage dans des m&eacute;tiers orient&eacute;s vers l'action, comme les m&eacute;tiers du commerce."),
+     'Divergent'    => array("Le divergent a des possibilit&eacute;s d'apprentissage oppos&eacute;es &agrave; celles du convergent. Un tel sujet est le plus &agrave; l'aise dans une situation d'exp&eacute;rience concr&egrave;te (ec) et d'observation r&eacute;fl&eacute;chie (or). Sa force r&eacute;side dans l'imagination. Il parvient tr&egrave;s bien &agrave; percevoir des situations concr&egrave;tes en adoptant des perspectives vari&eacute;es.  Nous avons appel&eacute; ce style divergent car une personne ayant ce mode d'apprentissage r&eacute;ussit  mieux dans des situations qui supposent la cr&eacute;ation d'id&eacute;es comme  par exemple des sessions de brainstorming. La recherche montre que les divergents s'int&eacute;ressent &agrave; autrui et font preuve d'imagination et  d'&eacute;motion. Ils ont des int&eacute;r&ecirc;ts culturels &eacute;tendus et tendent &agrave; se sp&eacute;cialiser dans le domaine  artistique. Les conseillers, les sp&eacute;cialistes du d&eacute;veloppement, les chefs du personnel  sont souvent caract&eacute;ris&eacute;s par ce mode d'apprentissage."),
+     'Convergent'   => array("Les aptitudes d'apprentissage dominantes du convergent sont la conceptualisation abstraite (ca) et l'exp&eacute;rimentation active (ea). La force la plus importante de ce type de sujet r&eacute;side dans l'application pratique des id&eacute;es. Une personne ayant ce type semble le mieux r&eacute;ussir dans des situations analogues aux tests d'intelligence, o&ugrave; il n'y a qu'une r&eacute;ponse correcte ou solution &agrave; une question ou un probl&egrave;me. La connaissance de cette personne est organis&eacute;e de telle sorte qu'elle peut se centrer sur des probl&egrave;mes sp&eacute;cifiques en utilisant une pens&eacute;e hypoth&eacute;ticod&eacute;ductive. La recherche concernant ce mode d'apprentissage montre que les convergents sont relativement peu &eacute;motifs, pr&eacute;f&eacute;rant s'occuper de choses plut&ocirc;t que de personnes. Ils ont des int&eacute;r&ecirc;ts techniques &eacute;troits et cherchent &agrave; se sp&eacute;cialiser en science physiques. Ce mode d'apprentissage est caract&eacute;ristique de bon nombres d'ing&eacute;nieurs."),
+     'Assimilateur' => array("L'assimilateur a des aptitudes d'apprentissage dans le domaine de la conceptualisation abstraite (ca) et de l'observation r&eacute;fl&eacute;chie (or). Une telle personne a surtout des possibilit&eacute;s dans le domaine de la cr&eacute;ation des mod&egrave;les th&eacute;oriques. Elle r&eacute;ussit particuli&egrave;rement bien dans le domaine du raisonnement inductif et dans l'organisation d'observations disparates en une explication coh&eacute;rente. Elle est, comme le convergent, moins int&eacute;ress&eacute;e par les autres que par les concepts abstraits ; mais elle se sent moins concern&eacute;e par l'emploi pratique des th&eacute;ories. Pour un tel sujet, il est plus important que la th&eacute;orie soit satisfaisante d'un point de vue logique ; dans une situation dans laquelle une th&eacute;orie ne s'accommoderait pas aux faits, l'assimilateur aurait plut&ocirc;t tendance &agrave; n&eacute;gliger ou &agrave; r&eacute;examiner les faits. Ce mode d'apprentissage est plut&ocirc;t caract&eacute;ristique des sciences de base et des math&eacute;matiques que des sciences appliqu&eacute;es. On trouve ce mode d'apprentissage chez les praticiens de la recherche ou de la planification."));
 
     $profilApprentissage = array_shift($profilApprentissage[$profil]); // stockage description en fonction du profil
 
 /**************************************************************************** 
 Insertion de l'utilisateur
 ****************************************************************************/
-$name = $monTabUsers['name'];
-$prenom = $monTabUsers['prenom'] ;
+$name           = $monTabUsers['name'];
+$prenom         = $monTabUsers['prenom'] ;
 $date_naissance = $monTabUsers['date_naissance'];
-$formation = $monTabUsers['formation'];
+$formation      = $monTabUsers['formation'];
 
 $insert_users = "INSERT INTO users (nom,prenom,date_naissance,formation) VALUES ('".$name."','".$prenom."','".$date_naissance."','".$formation."')";
-//echo $insert_users; // debug
 
 $mysqli->query($insert_users); // insertion utilisateur
 
@@ -145,7 +135,7 @@ if($mysqli)
 {
 //    echo "votre nom d'utilisateur a été enregistré";
 }
-else {echo "échec de l'insertion dans la base de données";}
+else {echo "&eacute;chec de l'insertion dans la base de donn&eacute;es";}
 
 /**************************************************************************** 
 Insertion résultat
@@ -155,20 +145,16 @@ Insertion résultat
 $select_iduser =    "SELECT idusers FROM users 
                             WHERE nom='".$name."' 
                             AND prenom ='".$prenom."'";
-//echo $select_iduser;
 
 $result_iduser = $mysqli->query($select_iduser);
 
 while ($sql_iduser = $result_iduser ->fetch_assoc()) // récupération iduser de l'utilisateur
 {
     $current_iduser=$sql_iduser['idusers'];
-    //testVar($current_iduser); // debug
 }
 
 $date=time(); // stockage de la date/heure/minute/seconde de l'insertion dans la base de données
 $insert_resultat = "INSERT INTO resultats (oc,ec,ca,ea,profil,date,users_Idusers) VALUES ('".$oc."','".$ec."','".$ca."','".$ea."','".$profil."', '".$date."','".$current_iduser."')";
-
-//testVar2 ($insert_resultat,"test","test"); // debug
 
 $mysqli->query($insert_resultat); // insertion utilisateur
 
@@ -176,14 +162,13 @@ if($mysqli)
 {
     //echo "vos résultats d'utilisateur a été enregistré";
 }
-else {echo "échec d'insertion";}
+else {echo "&eacute;chec d'insertion";}
 
 
 /**************************************************************************** 
 Insertion questions
 ****************************************************************************/
 $insert_questions = "INSERT INTO questions (q1,q2,q3,q4,q5,q6,q7,q8,q9,users_Idusers) VALUES ('".implode("",$_SESSION['questions']['1'])."','".implode("",$_SESSION['questions']['2'])."','".implode("",$_SESSION['questions']['3'])."','".implode("",$_SESSION['questions']['4'])."','".implode("",$_SESSION['questions']['5'])."', '".implode("",$_SESSION['questions']['6'])."','".implode("",$_SESSION['questions']['7'])."','".implode("",$_SESSION['questions']['8'])."','".implode("",$_SESSION['questions']['9'])."','".$current_iduser."')";
-//testVar($insert_questions); // debug
 
 $mysqli->query($insert_questions); // insertion des questions -> stocke une suite de caractère ~'1234'
 ?>
@@ -192,27 +177,27 @@ $mysqli->query($insert_questions); // insertion des questions -> stocke une suit
       
         <div class="row">
             <div class="small-10 small-centered large-uncentered columns">  
-                <h2>Votre Profil : <?php echo $profil; ?></h2>
+                <h2>Votre Profil : <?= $profil; ?></h2>
             </div>
             <div class="small-10 small-centered large-uncentered columns">  
                <ul>Vos résultats :
-                     <li>Vote score en EC (expérience concrète): <?php echo $ec; ?> </li>
-                     <li>Vote score en CA (conceptualisation abstraite): <?php echo $oc; ?> </li>
-                     <li>Vote score en EA (expérimentation active): <?php echo $ca; ?> </li>
-                     <li>Vote score en OR (observation réfléchie): <?php echo $ea; ?> </li>
+                     <li>Vote score en EC (exp&eacute;rience concr&egrave;te): <?= $ec; ?> </li>
+                     <li>Vote score en CA (conceptualisation abstraite): <?= $oc; ?> </li>
+                     <li>Vote score en EA (exp&eacute;rimentation active): <?= $ca; ?> </li>
+                     <li>Vote score en OR (observation r&eacute;fl&eacute;chie): <?= $ea; ?> </li>
                 </ul>
             </div>
         </div>
         
         <div class="row">
             <div class="small-12 small-centered large-uncentered columns">  
-                <p> Description: <?php echo $profilApprentissage; ?> </p>
+                <p> Description: <?= $profilApprentissage; ?> </p>
             </div>
         </div>
         
         <div class="row"> 
             <div class="small-12 small-centered large-uncentered columns">  
-                <p>Description de votre dominante: <?php echo $profilDominant ;?></p>
+                <p>Description de votre dominante: <?= $profilDominant ;?></p>
             </div>
         </div>
 

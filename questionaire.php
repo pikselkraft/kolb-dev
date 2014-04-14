@@ -28,7 +28,7 @@ Test de soumission de a question et incrémentation du numéro de la question
         5 => array("intuitif", "productif", "logique", "interrogateur"),
         6 => array("abstrait", "observateur", "concret", "actif"),
         7 => array("orient&eacute; vers le pr&eacute;sent", "r&eacute;flichissant", "orienté vers le futur", "pragmatique"),
-        8 => array("partir de son exp&eacute;rience", "observer", "penser", "expérimenter"),
+        8 => array("partir de son exp&eacute;rience", "observer", "penser", "exp&eacute;rimenter"),
         9 => array("intense", "r&eacute;serv&eacute;", "rationel", "responsable")
     ); 
     
@@ -52,32 +52,31 @@ Test de soumission de a question et incrémentation du numéro de la question
     }
     else 
     { 
-        echo "<p> Vous n'avez pas r&eacute;pondu à la question</p>";
+        echo "<p> Vous n'avez pas r&eacute;pondu &agrave; la question</p>";
     }
 
 ?>
 
 <?php require_once('includes/header.php'); ?>
         
-    <div class="row">
-        
+    <div class="row panel">
         <div class="small-10 small-centered large-uncentered columns">
              <h2>&Eacute;valuation Kolb</h2>
         </div>
 
         <div class="small-10 small-centered large-uncentered columns">
-           <p>Il vous reste encore <?= (10 - $question_number); ?> question<?php if($question_number === 9) { echo''; } else { echo 's'; } ?> à remplir, avant de connaitre votre profil d'apprenant</p>
+           <p>Il vous reste encore <?= (10 - $question_number); ?> question<?php if($question_number === 9) { echo''; } else { echo 's'; } ?> &agrave; remplir, avant de conna&icirc;tre votre profil d'apprenant</p>
         </div>
-   
     </div>
-                
+    
+    <div class="row panel">          
     <form name="email-form" method="POST" action="<?php $_SERVER['PHP_SELF']; ?>?etat=2">
             
-            <input type="hidden" name="question_number" value="<?= $question_number;?>" />
+        <input type="hidden" name="question_number" value="<?= $question_number;?>" />
         
         <div class="row">
             <div class="small-10 small-centered large-uncentered columns">
-                <label class="label" for="select-choix-1"><?php echo $questions[$question_number][0];  ?></label>
+                <label class="label" for="select-choix-1"><?= $questions[$question_number][0];  ?></label>
                 <select class="w-select select-score" id="select-choix-1" name="select-choix-1" required="required">
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -89,7 +88,7 @@ Test de soumission de a question et incrémentation du numéro de la question
             
         <div class="row">
             <div class="small-10 small-centered large-uncentered columns">  
-                <label class="label" for="select-choix-2"><?php echo $questions[$question_number][1] ; ?></label>
+                <label class="label" for="select-choix-2"><?= $questions[$question_number][1] ; ?></label>
                 <select class="w-select select-score" id="select-choix-2" name="select-choix-2" required="required">
                   <option value="2">2</option>
                   <option value="1">1</option>
@@ -101,7 +100,7 @@ Test de soumission de a question et incrémentation du numéro de la question
 
         <div class="row">
             <div class="small-10 small-centered large-uncentered columns">
-                <label class="label" for="select-choix-3"><?php echo $questions[$question_number][2]; ?></label>
+                <label class="label" for="select-choix-3"><?= $questions[$question_number][2]; ?></label>
                 <select class="w-select select-score" id="select-choix-3" name="select-choix-3" required="required">
                   <option value="3">3</option>
                   <option value="1">1</option>
@@ -113,7 +112,7 @@ Test de soumission de a question et incrémentation du numéro de la question
             
         <div class="row">
             <div class="small-10 small-centered large-uncentered columns">  
-                <label class="label" for="select-choix-4"><?php echo $questions[$question_number][3]; ?></label>
+                <label class="label" for="select-choix-4"><?= $questions[$question_number][3]; ?></label>
                 <select class="w-select select-score" id="select-choix-4" name="select-choix-4" required="required">
                   <option value="4">4</option>
                   <option value="1">1</option>
@@ -125,7 +124,7 @@ Test de soumission de a question et incrémentation du numéro de la question
         
         <div class="row">
             <div class="large-12 columns">
-              <input name="question_submit" type="submit" class="button" value="<?php 
+              <input name="question_submit" type="submit" class="button small" value="<?php 
                         if($question_number == 9) { 
                             echo "Resultat"; 
                         } 
@@ -135,5 +134,8 @@ Test de soumission de a question et incrémentation du numéro de la question
                         } ?>" />
             </div>
         </div>
+
     </form>
+    </div>
+
 <?php require_once('includes/footer.php'); ?>

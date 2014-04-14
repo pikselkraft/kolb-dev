@@ -31,12 +31,4 @@
             </ul>
         </nav>
         <br><br>
-         
-         <!-- <ul>
-            <li><a href="index.php">index</a></li> 
-            <li><a href="inscription.php">inscription</a></li> 
-            <li><a href="questionaire.php">questionaire</a></li> 
-            <li><a href="resultat.php">resultat</a></li>
-        </ul> -->
-        
        

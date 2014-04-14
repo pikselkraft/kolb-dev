@@ -1,6 +1,6 @@
 <?php require_once('includes/header.php');?>
     
-    <div class="row">
+    <div class="row panel">
         <div class="small-10 small-centered large-uncentered columns">
              <h2>&Eacute;valuation Kolb</h2>
         </div>
