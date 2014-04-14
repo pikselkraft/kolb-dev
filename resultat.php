@@ -29,7 +29,6 @@ $ea = $_SESSION['questions']['1']['3'] + $_SESSION['questions']['3']['3'] + $_SE
 $y  = $ca - $ec; 
 $x  = $ea - $oc; 
 
-echo "<br />"; 
 if($x >= 3 && $x <= 17 && $y <= 2 && $y >= -12)
 {
     $profil="Accomodateur";
@@ -133,7 +132,7 @@ $mysqli->query($insert_users); // insertion utilisateur
 
 if($mysqli)
 {
-//    echo "votre nom d'utilisateur a été enregistré";
+    $messageAlert = "";
 }
 else {echo "&eacute;chec de l'insertion dans la base de donn&eacute;es";}
 
@@ -160,9 +159,9 @@ $mysqli->query($insert_resultat); // insertion utilisateur
 
 if($mysqli)
 {
-    //echo "vos résultats d'utilisateur a été enregistré";
+    $messageAlert = "";
 }
-else {echo "&eacute;chec d'insertion";}
+else {$messageAlert = "&eacute;chec d'insertion";}
 
 
 /**************************************************************************** 
@@ -175,67 +174,59 @@ $mysqli->query($insert_questions); // insertion des questions -> stocke une suit
 
 <?php require_once('includes/header.php'); ?>
       
-        <div class="row">
-            <div class="small-10 small-centered large-uncentered columns">  
-                <h2>Votre Profil : <?= $profil; ?></h2>
+        <div class="row panel">
+            <div class="small-3 columns">
+                <h2>Votre Profil : </h2>
+                <br>
+                <h3 class="button large" id="custom-h3"><?= $profil; ?></h3>
+                <br><br>
+                <h4>Votre Dominante : </h4>
+                <br>
+                <h6 class="button" id="custom-h3"><?= strtoupper($profilStock); ?></h6>
             </div>
-            <div class="small-10 small-centered large-uncentered columns">  
+            <div class="small-9 columns">
+                <canvas id="canvas" width="600" height="300"></canvas>
+            </div>
+        </div>
+        
+        <div class="row panel">
+            <div class="small-12 small-centered large-uncentered columns">  
+                <p> Description: <?= $profilApprentissage; ?> </p>
+            </div>
+        </div>
+        
+        <div class="row panel"> 
+            <div class="small-12 small-centered large-uncentered columns">  
+                <p>Description de votre dominante: <?= $profilDominant ;?></p>
+            </div>
+        </div>
+                        
+  <!-- <div class="small-10 small-centered large-uncentered columns">  
                <ul>Vos résultats :
                      <li>Vote score en EC (exp&eacute;rience concr&egrave;te): <?= $ec; ?> </li>
                      <li>Vote score en CA (conceptualisation abstraite): <?= $oc; ?> </li>
                      <li>Vote score en EA (exp&eacute;rimentation active): <?= $ca; ?> </li>
                      <li>Vote score en OR (observation r&eacute;fl&eacute;chie): <?= $ea; ?> </li>
                 </ul>
-            </div>
-        </div>
+        </div> -->
         
-        <div class="row">
-            <div class="small-12 small-centered large-uncentered columns">  
-                <p> Description: <?= $profilApprentissage; ?> </p>
-            </div>
-        </div>
-        
-        <div class="row"> 
-            <div class="small-12 small-centered large-uncentered columns">  
-                <p>Description de votre dominante: <?= $profilDominant ;?></p>
-            </div>
-        </div>
-
-        <div class="row"> 
-            <div class="small-12 small-centered large-uncentered columns">  
-                <canvas id="canvas" width="400" height="400"></canvas>
-            </div>
-        </div>
-
-                        
-<?php
-
-  $test  = 10;
-  $test2 = 15;
-  $test3 = 100;
-  $test4 = 5;
-?>
     
-    <script>
+    <script type="text/javascript">
 
-    var barChartData = {
-      labels : ["January","February","March","April","May","June","July"],
-      datasets : [
-        {
-          fillColor : "rgba(220,220,220,0.5)",
-          strokeColor : "rgba(220,220,220,1)",
-          data : [<?= $test; ?>,<?= $test4; ?>,<?= $test2; ?>,<?= $test3; ?>,56,55,40]
-        },
-        {
-          fillColor : "rgba(151,187,205,0.5)",
-          strokeColor : "rgba(151,187,205,1)",
-          data : [<?= $test; ?>,<?= $test4; ?>,<?= $test2; ?>,<?= $test3; ?>,96,27,100]
-        }
-      ]
-      
+      var data = {
+        labels : ["EC : <?= $ec; ?>","CA : <?= $oc; ?>","EA : <?= $ca; ?>","OR : <?= $ea; ?>"],
+        datasets : [
+            {
+                fillColor : "rgba(220,220,220,0.5)",
+                strokeColor : "rgba(220,220,220,1)",
+                pointColor : "rgba(220,220,220,1)",
+                pointStrokeColor : "#fff",
+                data : [<?= $ec; ?>,<?= $oc; ?>,<?= $ca; ?>,<?= $ea; ?>]
+            }
+        ]
     }
 
-  var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Bar(barChartData);
-  
-  </script>
+      var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Radar(data);
+      
+    </script>
 <?php require_once('includes/footer.php'); ?>

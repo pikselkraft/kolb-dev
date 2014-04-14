@@ -13,7 +13,6 @@ Plan :
 -> Test Post et redirection questionaire
 -> Page html formulaire
 *************************/
-testVar($_POST['user_nom']);
 if(isset($_POST["user_nom"]))
 {    
     list($jour, $mois, $annee) = explode('/',$_POST['user_date_naissance']);
@@ -25,7 +24,6 @@ if(isset($_POST["user_nom"]))
    
     header("Location:questionaire.php");
 }
-
 ?>
 
   <?php require_once('includes/header.php'); ?>

@@ -9,12 +9,13 @@
             <h3>Quel apprenant &ecirc;tes-vous ?</h3>
         </div>
     </div>
-    <div class="row"></div>
-    <div class="row">
-        <div class="small-12 small-centered large-uncentered columns panel">
-            <p>Le questionnaire kolb permet de déterminer votre profil d'apprenant, votre façon d'enregistrer, de retenir une information.</p>
 
-            <a href="inscription.php" class="button small">D&eacute;buter le questionnaire</a>
+    <div class="row panel">
+        <div class="small-8 columns">
+            <p>Le questionnaire kolb permet de d&eacute;terminer votre profil d'apprenant, votre façon d'enregistrer, de retenir une information.</p>
+        </div>
+        <div class="small-4 columns">
+            <a href="inscription.php" class="button">Le questionnaire</a>
         </div>
     </div>
     
