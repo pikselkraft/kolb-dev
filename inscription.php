@@ -13,7 +13,6 @@ Plan :
 -> Test Post et redirection questionaire
 -> Page html formulaire
 *************************/
-
 if(isset($_POST["user_nom"]))
 {    
     list($jour, $mois, $annee) = explode('/',$_POST['user_date_naissance']);
@@ -25,13 +24,11 @@ if(isset($_POST["user_nom"]))
    
     header("Location:questionaire.php");
 }
-
 ?>
 
   <?php require_once('includes/header.php'); ?>
 
-    <div class="row">
-        
+    <div class="row panel">
         <div class="small-10 small-centered large-uncentered columns">
              <h2>&Eacute;valuation Kolb</h2>
         </div>
@@ -39,20 +36,20 @@ if(isset($_POST["user_nom"]))
         <div class="small-10 small-centered large-uncentered columns">
             <p>Les donn&eacute;es sont recueillis uniquement pour nos statistiques.</p>
         </div>
-   
     </div>
-                         
-    <form name="email_form" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" id="email_form" novalidate="novalidate">
+    
+    <div class="row panel">                 
+    <form name="email_form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" id="email_form" novalidate="novalidate">
         
         <div class="row">
             <div class="large-6 columns">
                 <label class="label" for="user_nom">Nom:</label>
-                <input class="w-input input" id="input-nom" type="text" ng-model="yourName" placeholder="Entrez votre nom" name="user_nom" required="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" autofocus="autofocus">
+                <input class="w-input input" id="input-nom" type="text" placeholder="Entrez votre nom" name="user_nom" required="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" autofocus="autofocus">
             </div>
             
             <div class="large-6 columns">
                 <label class="label" for="user_prenom">Pr&eacute;nom</label>
-                <input class="w-input input" id="input-prenom" type="text" ng-model="yourFirstName" placeholder="Entrez votre prénom" name="user_prenom" required="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$">
+                <input class="w-input input" id="input-prenom" type="text" placeholder="Entrez votre pr&eacute;nom" name="user_prenom" required="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$">
              </div>
         </div> 
         
@@ -80,15 +77,15 @@ if(isset($_POST["user_nom"]))
          </div>
          
          <div class="row">
-            <div class="large-6 columns">
+            <div class="small-2 small-centered columns">
                 <input type="submit" value="Questionaire" class="button">
             </div>
          </div>
-         
     </form>
+    </div>
 
 <?php
-$ua          =getBrowser();
+$ua          = getBrowser();
 $yourbrowser = "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'] . " reports: <br >" . $ua['userAgent'];  
 if($ua['name']=="Internet Explorer" or $ua['name']=="Apple Safari") // test navigateur safari et IE
 {
