@@ -12,15 +12,13 @@
         <script src="//code.jquery.com/jquery-1.9.1.js"></script>
         <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 
-        <script src="js/prettify.js"></script>
-        <script src="js/Chart.js"></script>
         <script src="js/vendor/fastclick.js"></script>
-        <script src="js/foundation/foundation.js"></script>
-        <script src="js/foundation/foundation.reveal.js"></script>
+
         
         <style type="text/css">
             .label {width:150px;text-align:right;float:left;padding-right:10px;font-weight:bold;}
-            #register-form label.error, .output {color:#FB3A3A;font-weight:bold;}#custom-h3{color:white;}
+            #register-form label.error, .output {color:#FB3A3A;font-weight:bold;}a.button.large {
+    text-decoration: underline;}
         </style>
     </head>
     <body>
@@ -28,7 +26,7 @@
         <nav class="top-bar" data-topbar>
             <ul class="title-area">
                 <li class="name">
-                  <h1><a href="#">Test Kolb</a></h1>
+                  <h1><a href="index.php">Test Kolb</a></h1>
                 </li>
             </ul>
         </nav>

@@ -174,59 +174,71 @@ $mysqli->query($insert_questions); // insertion des questions -> stocke une suit
 
 <?php require_once('includes/header.php'); ?>
       
-        <div class="row panel">
-            <div class="small-3 columns">
-                <h2>Votre Profil : </h2>
-                <br>
-                <h3 class="button large" id="custom-h3"><?= $profil; ?></h3>
-                <br><br>
-                <h4>Votre Dominante : </h4>
-                <br>
-                <h6 class="button" id="custom-h3"><?= strtoupper($profilStock); ?></h6>
-            </div>
-            <div class="small-9 columns">
-                <canvas id="canvas" width="600" height="300"></canvas>
-            </div>
+    <div class="row panel">
+        <div class="small-3 columns">
+            <h2>Votre Profil : </h2>
+            <br/>
+            <a href="#" class="button large underligne" data-reveal-id="profil" data-reveal><?= $profil; ?></a>
+            <br/><br/>
+            <h4 href="#a" data-reveal-id="dominant" data-reveal>Votre Dominante : </h4>
+            <br/>
+            <a href="#" class="button large" data-reveal-id="dominant" data-reveal><?= strtoupper($profilStock); ?></a>
         </div>
-        
-        <div class="row panel">
-            <div class="small-12 small-centered large-uncentered columns">  
-                <p> Description: <?= $profilApprentissage; ?> </p>
-            </div>
+        <div class="small-9 columns">
+            <canvas id="canvas" width="600" height="350"></canvas>
         </div>
-        
-        <div class="row panel"> 
-            <div class="small-12 small-centered large-uncentered columns">  
-                <p>Description de votre dominante: <?= $profilDominant ;?></p>
-            </div>
-        </div>
+    </div>
 
-         <a class="button" href="#" data-reveal-id="myModal">Regular Modal Example</a>
-         <div class="reveal-modal" id="myModal" data-reveal="">
-         <h2>This is a Pop Up</h2>
-         There are many like it but this one is mine. Click the "x" in the upper right hand corner to close or you can click anywhere outside of the window to close
-         <a class="close-reveal-modal">×</a></div>
- 
-<!--/.reveal-modal -->
+    <div id="dominant" class="reveal-modal" data-reveal>
+      <h2>Description de votre profil: </h2>
+      <p class="lead"><?= $profilApprentissage; ?></p>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+    <div id="profil" class="reveal-modal" data-reveal>
+      <h2>Description de votre dominante:</h2>
+      <p class="lead"><?= $profilDominant ;?></p>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+            
+    <script src="js/foundation/foundation.js"></script>
+    <script src="js/foundation/foundation.reveal.js"></script>
+    <script src="js/prettify.js"></script>
+    <script src="js/Chart.js"></script>
 
     <script type="text/javascript">
+        /**
+         * gestion popup (modal)
+         */
+        $(document).foundation();
+        $("#dominant").on("click", function(e) {
+            $('#dominant').foundation('reveal', 'open');
+            $('#dominant').foundation('reveal', 'close');
+        });
 
-         $(document).foundation();
+        $("#profil").on("click", function(e) {
+            $('#profil').foundation('reveal', 'open');
+            $('#profil').foundation('reveal', 'close');
+        });
 
-      var data = {
-        labels : ["EC : <?= $ec; ?>","CA : <?= $oc; ?>","EA : <?= $ca; ?>","OR : <?= $ea; ?>"],
-        datasets : [
-            {
-                fillColor : "rgba(220,220,220,0.5)",
-                strokeColor : "rgba(220,220,220,1)",
-                pointColor : "rgba(220,220,220,1)",
-                pointStrokeColor : "#fff",
-                data : [<?= $ec; ?>,<?= $oc; ?>,<?= $ca; ?>,<?= $ea; ?>]
-            }
-        ]
-    }
+        /**
+         * [data description]
+         * @type {Object}
+         * gestion chart
+         */
+        var data = {
+            labels : ["EC : <?= $ec; ?>","CA : <?= $oc; ?>","EA : <?= $ca; ?>","OR : <?= $ea; ?>"],
+            datasets : [
+                {
+                    fillColor : "rgba(220,220,220,0.5)",
+                    strokeColor : "rgba(220,220,220,1)",
+                    pointColor : "rgba(220,220,220,1)",
+                    pointStrokeColor : "#fff",
+                    data : [<?= $ec; ?>,<?= $oc; ?>,<?= $ca; ?>,<?= $ea; ?>]
+                }
+            ]
+        }
 
-      var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Radar(data);
-      
+        var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Radar(data);
     </script>
 <?php require_once('includes/footer.php'); ?>
