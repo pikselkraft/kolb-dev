@@ -50,7 +50,6 @@ Test de soumission de a question et incrémentation du numéro de la question
             $question_number = $_POST['question_number'] + 1; // incrémentation de la question
         }
     }
-
 ?>
 
 <?php require_once('includes/header.php'); ?>
