@@ -60,6 +60,10 @@ Test de soumission de a question et incrémentation du numéro de la question
         </div>
 
         <div class="small-10 small-centered large-uncentered columns">
+           <p>Classer les mots selon votre profil (4 pour le mot qui vous caract&eacute;rise le mieux, 3 pour le mot qui vous caract&eacute;rise un peu moins bien, etc.)</p>
+        </div>
+
+        <div class="small-10 small-centered large-uncentered columns">
            <p>Il vous reste encore <?= (10 - $question_number); ?> question<?php if($question_number === 9) { echo''; } else { echo 's'; } ?> &agrave; remplir, avant de conna&icirc;tre votre profil d'apprenant</p>
         </div>
     </div>

@@ -56,7 +56,7 @@ if(isset($_POST["user_nom"]))
         <div class="row">
              <div class="large-12 columns">
                 <label class="label" for="user_date_naissance">Date de naissance:</label>
-                <input class="w-input input" id="input-date-naissance" type="date" placeholder="jj/mm/aaaa ou jj.mm.aaaa" name="user_date_naissance" required="required" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}">
+                <input class="w-input input" id="input-date-naissance" type="date" placeholder="jj/mm/aaaa ou jj.mm.aaaa" name="user_date_naissance" required="required">
             </div>
         </div>
         
